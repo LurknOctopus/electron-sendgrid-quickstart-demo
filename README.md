@@ -15,7 +15,7 @@ npm install
 npm start
 ```
 
-Don't forget to set your SendGrid API key in your environment variables and set the to/from email address in index.html.
+Note: Don't forget to set your SendGrid API key in your environment variables and set the to/from email address in index.html.
 
 ## License
 
