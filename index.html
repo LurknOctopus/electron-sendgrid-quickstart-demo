@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://api.sendgrid.com/v3/mail/send; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+  <title>Electron-SendGrid-Quick-Start</title>
+</head>
+
+<body>
+  <h1>Electron-SendGrid-Quick-Start</h1>
+  We are using Node.js <span id="node-version"></span>,
+  Chromium <span id="chrome-version"></span>,
+  and Electron <span id="electron-version"></span>.
+  <br>
+  <hr>
+
+<!-- Twilio Email API Section -->
+<section>
+  <h2>Send e-mail via Twilio SendGrid v3 Web API:</h2>
+
+  <form method="post" enctype="text/plain">
+    <div class="container" style="display: flex; height: 400px;">
+      <div style="width: 50%;">
+        To:<br>
+        <input id="toInput" type="text" name="to" value="gradyfromtwilio@gmail.com" style="width:200px;" disabled><br>
+        From:<br>
+        <input id="fromInput" type="text" name="from" value="gradyfromtwilio@gmail.com" style="width:200px;" disabled><br><br>
+        Subject:<br>
+        <input id="subjectInput" type="text" name="subject" style="width:200px;"><br>
+        Text:<br>
+        <input id="textInput" type="text" name="text" style="width:200px;"><br>
+        Name:<br>
+        <input id="nameInput" type="text" name="name" style="width:200px;"><br><br>
+        Select the dynamic template to use:<br>
+          <input type="radio" name="emailSelect" value="bronco_welcome_email" onclick="showPreview('bronco_welcome_email')">
+          <label for="html">Bronco Welcome Email</label><br>
+          <input type="radio" name="emailSelect" value="bronco_gear_email" onclick="showPreview('bronco_gear_email')">
+          <label for="css">Bronco Gear Email</label><br>
+          <input type="radio" name="emailSelect" value="bronco_event_email" onclick="showPreview('bronco_event_email')">
+          <label for="javascript">Bronco Event Email</label><br><br>
+        <input type="button" value="Send" onclick="sendEmail()">
+        <input type="reset" value="Reset" onclick="resetStatus()">
+      </div>
+      <div id="emailPreview" style="flex-grow: 1;">
+      </div>
+    </div>
+
+    <p id="statusMessage"></p>
+
+  </form>
+  <br>
+  <hr>
+</section>
+<!-- Twilio Email API Section -->
+
+
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>
